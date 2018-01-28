@@ -1,21 +1,6 @@
 <center><h1>Fake Instagram</h1></center>
 
-<div class="posts-wrapper row">
-  <% @posts.each do |post| %>
-  <center>
-    <div class="post">
-      <div class="post-head">
-        <div class="name">
-          Ricki DiCristoforo
-        </div>
-      </div>
-      <div class="image center-block">
-        <%= link_to (image_tag post.image.url(:medium), class:'img-responsive'), post_path(post) %>
-      </div>
-      <p class="caption">
-        <%= post.caption %>
-      </p>
-    </div>
-    </center>
-  <% end %>
-</div>
+
+<% @posts.each do |post| %>
+  <%= render 'post', post: post %>
+<% end %>
